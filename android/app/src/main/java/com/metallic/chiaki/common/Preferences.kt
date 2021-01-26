@@ -98,6 +98,11 @@ class Preferences(context: Context)
 		get() = sharedPreferences.getBoolean(swapCrossMoonKey, false)
 		set(value) { sharedPreferences.edit().putBoolean(swapCrossMoonKey, value).apply() }
 
+	val tvModeEnabledKey get() = resources.getString(R.string.preferences_tv_mode_enabled_key)
+	var tvModeEnabled
+		get() = sharedPreferences.getBoolean(tvModeEnabledKey, false)
+		set(value) { sharedPreferences.edit().putBoolean(tvModeEnabledKey, value).apply() }
+
 	val resolutionKey get() = resources.getString(R.string.preferences_resolution_key)
 	var resolution
 		get() = sharedPreferences.getString(resolutionKey, resolutionDefault.value)?.let { value ->
